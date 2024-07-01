@@ -229,8 +229,8 @@
 				<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 				<script src="https://fastly.jsdelivr.net/gh/stevenjoezhang/live2d-widget@latest/autoload.js"></script>
 				<script>
-					$.post("https://sunpma.com/other/hitokoto/", function(hitokoto) {
-					    $("#yiyan").html(hitokoto);
+					$.get("https://api.shadiao.pro/chp", function(ch) {
+					   $("#yiyan").html(ch.data.text);
 					});
 				</script>
 				{{ &OPT.codeBeforBody }}
