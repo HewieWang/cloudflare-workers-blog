@@ -232,6 +232,30 @@
 					$.get("https://api.shadiao.pro/chp", function(ch) {
 					   $("#yiyan").html(ch.data.text);
 					});
+
+					function drawHelloWorld(canvas, txt="老王博客") {
+					    const ctx = canvas.getContext("2d");
+					    ctx.rect(0, 0, 200, 112); // Changed dimensions to match the image size
+					    ctx.fillStyle = "#16a1e7";
+					    ctx.fill();
+					    ctx.font = "30px Helvetica";
+					    ctx.fillStyle = "#ffffff";
+					    ctx.fillText(txt, 20, 70); // Adjusted text position to center it
+					}
+					
+					document.addEventListener("DOMContentLoaded", function() {
+					    const images = document.querySelectorAll(".wp-post-image");
+					    images.forEach(image => {
+					        const src = image.getAttribute("src");
+					        if (!src || !src.startsWith("https://")) {
+					            const canvas = document.createElement("canvas");
+					            canvas.width = image.width;
+					            canvas.height = image.height;
+					            drawHelloWorld(canvas);
+					            image.src = canvas.toDataURL("image/jpeg");
+					        }
+					    });
+					});
 				</script>
 				{{ &OPT.codeBeforBody }}
 			</body>
