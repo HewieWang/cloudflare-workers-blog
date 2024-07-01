@@ -220,27 +220,6 @@
 				<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/WordPress/WordPress@5.6/wp-includes/js/clipboard.min.js?ver=5.6" id="clipboard-js"></script>
 				<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/gdtool/zhaopp/cfblog/wp-embed.min.js?ver=5.6" id="wp-embed-js"></script>
 				<script>hljs.initHighlightingOnLoad(); //代码高亮
-				
-				function drawHelloWorld(canvas,txt="老王博客") {
-				    const ctx = canvas.getContext("2d");
-				    ctx.rect(0, 0, 300, 300);
-				    ctx.fillStyle = "#16a1e7";
-				    ctx.fill();
-				    ctx.font = "30px Helvetica";
-				    ctx.fillStyle = "#ffffff";
-				    ctx.fillText(txt, 80, 150);
-				}
-			        const canvas = document.getElementById('a_{{&id}}');
-				drawHelloWorld(canvas);
-				const imgElement = document.createElement('img');
-				imgElement.src = canvas.toDataURL('image/jpeg');
-			        var src=document.getElementById("i_{{&id}}").src;
-			 	if(src.indexOf("https")!=-1){
-					
-				}else{
-				    document.getElementById("i_{{&id}}").src=imgElement.src;
-				}
-				
 				</script>
 				{{ &OPT.codeBeforBody }}
 			</body>
